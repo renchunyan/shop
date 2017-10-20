@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="Content/css/style.css">
+    <link rel="stylesheet" href="Content/fonts/iconfont.css">
+    <link rel="stylesheet" href="Content/css/swiper-3.3.1.min.css">
+</head>
+<body ng-app="myApp">
+<div class="wrap">
+      <header class="header">
+            <a ng-href="#/tab">全部</a>
+            <a ng-href="#/tabs">支出</a>
+          <i class="icon iconfont icon-fangdajing"></i>
+      </header>
+    <section class="section">
+        <ng-view></ng-view>
+    </section>
+    <footer class="footer">
+        <a> <i class="icon iconfont icon-shouye"></i><b>首页</b></a>
+        <a> <i class="icon iconfont icon-reddit"></i><b>论坛</b></a>
+        <a> <i class="icon iconfont icon-set"></i><b>选车</b></a>
+        <a> <i class="icon iconfont icon-gouwuche"></i><b>发现</b></a>
+        <a> <i class="icon iconfont icon-wode"></i><b>未登录</b></a>
+    </footer>
+</div>
+
+
+<script src="Script/angular/angular.min.js"></script>
+<script src="Script/angular/angular-route.min.js"></script>
+<script src="Script/jquery/jquery-3.2.1.min.js"></script>
+<script src="Script/isCroll/iscroll5.js"></script>
+<script src="App/app.js"></script>
+<script type="text/javascript" src="App/service/ajax.js"></script>
+<script type="text/javascript" src="App/service/tabServer.js"></script>
+<script src="App/Directive/tabDirective.js"></script>
+<script src="App/Directive/tabsDirective.js"></script>
+<script src="App/Controller/tabController.js"></script>
+<script src="App/Controller/tabsController.js"></script>
+<script src="Script/swiper/swiper-3.3.1.min.js"></script>
+<script>
+    document.documentElement.style.fontSize = document.documentElement
+            .clientWidth/375*50+'px';
+
+    $('.footer a').eq(1).addClass("bg").siblings().removeClass("bg");
+    $('.footer a').on('click',function() {
+        $(this).addClass("bg").siblings().removeClass("bg");
+    });
+
+</script>
+</body>
+</html>
